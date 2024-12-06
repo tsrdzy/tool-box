@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "iconfont-color"; /* Project id 4761787 */
+  /* Color fonts */
+  src: 
+       url('iconfont.woff2?t=1733116145805') format('woff2'),
+       url('iconfont.woff?t=1733116145805') format('woff'),
+       url('iconfont.ttf?t=1733116145805') format('truetype');
+}
+
+.iconfont-color {
+  font-family: "iconfont-color" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-GitHub_Logo-ai:before {
+  content: "\e60e";
+}
+
+.icon-logo:before {
+  content: "\e60d";
+}
+
+.icon-Sass:before {
+  content: "\e6d0";
+}
+
+.icon-daimakuicon:before {
+  content: "\e62e";
+}
+
+.icon-nodejs:before {
+  content: "\e71d";
+}
+
+.icon-element-plus:before {
+  content: "\e690";
+}
+
+.icon-iconfont-export:before {
+  content: "\e60c";
+}
+
+.icon-Vue:before {
+  content: "\e799";
+}
+
+.icon-electron:before {
+  content: "\e7d7";
+}
+
+.icon-file_type_godot:before {
+  content: "\e667";
+}
+
+.icon-Blender:before {
+  content: "\e86c";
+}
+

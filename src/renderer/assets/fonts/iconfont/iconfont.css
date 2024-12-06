@@ -1,0 +1,153 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4770633 */
+  src: url('iconfont.woff2?t=1733505022885') format('woff2');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-windows:before {
+  content: "\e668";
+}
+
+.icon-wenjianfile63:before {
+  content: "\e612";
+}
+
+.icon-star-filled:before {
+  content: "\ea40";
+}
+
+.icon-star:before {
+  content: "\ea51";
+}
+
+.icon-more:before {
+  content: "\ea8c";
+}
+
+.icon-ruler-one-filled:before {
+  content: "\ea1f";
+}
+
+.icon-music-filled:before {
+  content: "\ea6d";
+}
+
+.icon-book-one-filled:before {
+  content: "\ea24";
+}
+
+.icon-file-code-filled:before {
+  content: "\ea25";
+}
+
+.icon-file-txt-filled:before {
+  content: "\ea26";
+}
+
+.icon-file-word-filled:before {
+  content: "\ea27";
+}
+
+.icon-video-one-filled:before {
+  content: "\ea29";
+}
+
+.icon-picture-filled:before {
+  content: "\ea28";
+}
+
+.icon-adjustment-filled:before {
+  content: "\ea34";
+}
+
+.icon-application-two-filled:before {
+  content: "\ea35";
+}
+
+.icon-find-filled:before {
+  content: "\ea39";
+}
+
+.icon-analysis-filled:before {
+  content: "\eaec";
+}
+
+.icon-font-size:before {
+  content: "\ea49";
+}
+
+.icon-guanwang:before {
+  content: "\e601";
+}
+
+.icon-github1:before {
+  content: "\e652";
+}
+
+.icon-OOjs_UI_icon_logo-wikipedia:before {
+  content: "\e616";
+}
+
+.icon-npm1:before {
+  content: "\e6de";
+}
+
+.icon-isolate:before {
+  content: "\e60f";
+}
+
+.icon-volume-small-filled:before {
+  content: "\ea6e";
+}
+
+.icon-volume-mute-filled:before {
+  content: "\ea6f";
+}
+
+.icon-theme-filled:before {
+  content: "\ea73";
+}
+
+.icon-attention-filled:before {
+  content: "\ea7a";
+}
+
+.icon-hammer-and-anvil-filled:before {
+  content: "\ea7e";
+}
+
+.icon-all-application-filled:before {
+  content: "\ea88";
+}
+
+.icon-home-filled:before {
+  content: "\ea89";
+}
+
+.icon-setting-one-filled:before {
+  content: "\ea8a";
+}
+
+.icon-zuixiaohua1:before {
+  content: "\e629";
+}
+
+.icon-guanbi1:before {
+  content: "\e603";
+}
+
+.icon-zuidahua:before {
+  content: "\e651";
+}
+
+.icon-zuidahua-1:before {
+  content: "\e614";
+}
+
