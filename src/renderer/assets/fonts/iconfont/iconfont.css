@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4770633 */
-  src: url('iconfont.woff2?t=1733505022885') format('woff2');
+  src: url('iconfont.woff2?t=1733586986757') format('woff2');
 }
 
 .iconfont {
@@ -9,6 +9,26 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-play-one:before {
+  content: "\ea70";
+}
+
+.icon-pause:before {
+  content: "\ea71";
+}
+
+.icon-shanchu:before {
+  content: "\e600";
+}
+
+.icon-zhankai:before {
+  content: "\e613";
+}
+
+.icon-zhankai-:before {
+  content: "\e648";
 }
 
 .icon-windows:before {

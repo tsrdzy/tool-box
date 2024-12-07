@@ -45,8 +45,20 @@ const routes = [
                         path: 'keyboardtext',
                         component: () => import('@/views/tool/projects/KeyboardText/index.vue'),
                         meta: { title: "toolbox.navs.keyboardtext", tier: 3 },
+                    }, {
+                        path: 'picturetextconversion',
+                        component: () => import('@/views/tool/projects/PictureTextConversion/index.vue'),
+                        meta: { title: "toolbox.navs.picturetextconversion", tier: 3 },
+                    }, {
+                        path: 'photocompression',
+                        component: () => import('@/views/tool/projects/PhotoCompression/index.vue'),
+                        meta: { title: "toolbox.navs.photocompression", tier: 3 },
+                    }, {
+                        path: 'audiospeedchange',
+                        component: () => import('@/views/tool/projects/AudioSpeedChange/index.vue'),
+                        meta: { title: "toolbox.navs.audiospeedchange", tier: 3 },
                     },
-                    
+
                 ]
             },
             {

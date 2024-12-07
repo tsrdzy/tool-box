@@ -1,7 +1,7 @@
 <template>
 
     <el-input v-on:input="generateQrcode" resize="none" v-model="textarea" :autosize="{ minRows: 1, maxRows: 5 }"
-        type="textarea" placeholder="请输入待转换的文本">
+        type="textarea" placeholder="请输入待转换的文本或网址">
     </el-input>
     <div class="set">
         <el-input v-on:input="generateQrcode" v-model="size"> <template #prepend>二维码的大小</template></el-input>

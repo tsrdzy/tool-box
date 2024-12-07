@@ -86,7 +86,6 @@
                             <a v-if="ct.web != ''" class="url iconfont" target="_blank" :href="ct.web"
                                 alt="官网">&#xe601;</a>
                             <a v-else class="nourl iconfont">&#xe601;</a>
-
                             <a v-if="ct.github != ''" class="url iconfont" target="_blank" :href="ct.github"
                                 alt="github">&#xe652;</a>
                             <a v-else class="nourl iconfont">&#xe652;</a>
@@ -98,7 +97,6 @@
                             <a v-if="ct.npmurl != ''" class="url iconfont" target="_blank" :href="ct.npmurl"
                                 alt="npm">&#xe6de;</a>
                             <a v-else class="nourl iconfont">&#xe6de;</a>
-
                         </div>
                     </div>
                 </el-card>

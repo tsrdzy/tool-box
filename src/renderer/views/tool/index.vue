@@ -18,6 +18,7 @@
                     </el-menu>
                 </el-scrollbar>
             </div>
+            <div v-on:click="isunfold" class="isunfold iconfont">{{ isCollapse ? '&#xe648;' : '&#xe613;' }}</div>
         </div>
 
         <el-backtop target=".content_main" :visibility-height="50" :right="30" :bottom="30" />
@@ -115,18 +116,18 @@ const typelists = ref([
         label: "text", icon: '&#xea26;',
         lists: [
             {
-                title: "base64文本转换工具",
+                title: "base64编码&文本转换",
                 url: "base64textconversion",
-                logo: "&#xea34;",
+                logo: "&#xe80e;",
                 tag: ["转换", "编码", "base64"],
                 intro: "这是一款base64编码转换工具，支持文本、图片、文件等格式的转换。",
                 time: "2024-11-20"
             }, {
-                title: "文字转二维码工具",
+                title: "文字转二维码",
                 url: "qrcodegeneration",
-                logo: "&#xea34;",
+                logo: "&#xe63e;",
                 tag: ["转换", "二维码", "生成"],
-                intro: "这是一款文字转二维码工具，支持自定义设置二维码尺寸、颜色等参数，还可选择保存图片或分享给好友。",
+                intro: "这是一款文字转二维码工具，支持自定义设置二维码尺寸、颜色等参数，还可选择保存图片或分享给好友。,也可以输入网址,生成二维码。网址格式为http://或https://开头。",
                 time: "2024-11-20"
             },
         ]
@@ -139,11 +140,36 @@ const typelists = ref([
     {
         type: '图像',
         label: "graphics", icon: '&#xea28;',
-        lists: []
+        lists: [
+            {
+                title: "图片转base64编码",
+                url: "picturetextconversion",
+                logo: "",
+                tag: ["转换", "base64", "图片"],
+                intro: "这是一款图片转base64编码工具，支持选择图片、上传图片或直接输入链接，还可自定义设置输出格式。",
+                time: "2024-12-7"
+            }, {
+                title: "图片压缩",
+                url: "photocompression",
+                logo: "",
+                tag: ["压缩", "图片"],
+                intro: "这是一款图片压缩工具，支持选择图片、上传图片，可自定义压缩大小。",
+                time: "2024-12-7"
+            },
+        ]
     }, {
         type: '音频',
         label: "audio", icon: '&#xea6d;',
-        lists: []
+        lists: [
+            {
+                title: "音频变速",
+                url: "audiospeedchange",
+                logo: "",
+                tag: ["变速", "处理", "音效"],
+                intro: "这是一款音频变速工具，支持选择音频、上传音频，可自定义设置倍数。",
+                time: "2024-12-7"
+            },
+        ]
     }, {
         type: '视频',
         label: "video", icon: '&#xea29;',
@@ -164,26 +190,26 @@ const typelists = ref([
         type: '计算',
         label: "compute", icon: '&#xea34;', lists: [
             {
-                title: "小学数学题生成器",
+                title: "小学数学题生成",
                 url: "esmathproblemcreating",
-                logo: "&#xea34;",
+                logo: "&#xe639;",
                 tag: ["随机", "生成", "数学", "生成"],
                 intro: "这是一款小学算术题生成工具，能自主选定运算符，灵活设置小数、数字范围等参数，按需求生成题目，可选择显示答案，还支持打印输出。",
                 time: "2024-11-20"
             },
             {
-                title: "进制转换器",
+                title: "进制转换",
                 url: "baseconversion",
-                logo: "&#xea34;",
+                logo: "&#xe876;",
                 tag: ["转换", "进制"],
                 intro: "这是一款进制转换工具，可自主选择进制，灵活设置数字范围等参数，支持自定义进制转换。",
                 time: "2024-12-6"
             }
             ,
             {
-                title: "随机数生成器",
+                title: "随机数生成",
                 url: "randomnumbergeneration",
-                logo: "&#xea34;",
+                logo: "&#xe748;",
                 tag: ["随机", "生成", "数值"],
                 intro: "这是一款随机数生成工具，可自主选择生成方式、数字范围等参数，支持自定义设置个数和位数。",
                 time: "2024-12-7"
@@ -202,7 +228,7 @@ const typelists = ref([
             {
                 title: "键盘测试工具",
                 url: "keyboardtext",
-                logo: "&#xea34;",
+                logo: "&#xe706;",
                 tag: ["测试", "键盘", "输入"],
                 intro: "这是一款键盘测试工具，可检测当前键盘是否有坏键。Fn键目前无法检测",
                 time: "2023-10-20"
@@ -213,11 +239,14 @@ const isCollapse = ref(true);
 
 //移入
 function navsmouseenter() {
-    isCollapse.value = false;
+    // isCollapse.value = false;
 }
 //移出
 function navsmouseleave() {
-    isCollapse.value = true;
+    // isCollapse.value = true;
+}
+function isunfold() {
+    isCollapse.value = !isCollapse.value;
 }
 
 </script>
@@ -231,6 +260,37 @@ function navsmouseleave() {
     .sidebar {
         height: calc(100% - 90px);
         border-right: 1px solid #77777777;
+        position: relative;
+
+        &:hover {
+            .isunfold {
+                transition: all 0.3s;
+                width: 20px;
+                font-size: 16px;
+            }
+        }
+
+        .isunfold {
+            transition: all 0.3s;
+            position: absolute;
+            top: calc(50% - 40px);
+            left: 100%;
+            height: 80px;
+            width: 5px;
+            font-size: 5px;
+            background-color: #77777711;
+            color: #77777755;
+            border-radius: 0 5px 5px 0;
+            text-align: center;
+            line-height: 80px;
+            // font-size: 20px;
+            z-index: 1000;
+
+            &:hover {
+                background-color: #77777766;
+                color: #77777799;
+            }
+        }
 
         .el-menu-vertical {
             height: 100%;
@@ -292,7 +352,7 @@ function navsmouseleave() {
                 width: 50px;
                 height: 50px;
                 min-height: 50px;
-                font-size: 40px;
+                font-size: 30px;
                 line-height: 50px;
                 text-align: center;
             }
