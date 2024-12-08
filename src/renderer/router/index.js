@@ -57,6 +57,10 @@ const routes = [
                         path: 'audiospeedchange',
                         component: () => import('@/views/tool/projects/AudioSpeedChange/index.vue'),
                         meta: { title: "toolbox.navs.audiospeedchange", tier: 3 },
+                    },{
+                        path: 'jsonformatting',
+                        component: () => import('@/views/tool/projects/JsonFormatting/index.vue'),
+                        meta: { title: "toolbox.navs.jsonformatting", tier: 3 },
                     },
 
                 ]

@@ -123,7 +123,7 @@ const typelists = ref([
                 intro: "这是一款base64编码转换工具，支持文本、图片、文件等格式的转换。",
                 time: "2024-11-20"
             }, {
-                title: "文字转二维码",
+                title: "文字&网址转二维码",
                 url: "qrcodegeneration",
                 logo: "&#xe63e;",
                 tag: ["转换", "二维码", "生成"],
@@ -162,11 +162,11 @@ const typelists = ref([
         label: "audio", icon: '&#xea6d;',
         lists: [
             {
-                title: "音频变速",
+                title: "音频变速(无下载)",
                 url: "audiospeedchange",
                 logo: "",
                 tag: ["变速", "处理", "音效"],
-                intro: "这是一款音频变速工具，支持选择音频、上传音频，可自定义设置倍数。",
+                intro: "这是一款音频变速工具，支持选择音频、上传音频，可自定义设置倍数。只可预览,暂时不可下载",
                 time: "2024-12-7"
             },
         ]
@@ -176,7 +176,16 @@ const typelists = ref([
         lists: []
     }, {
         type: '开发',
-        label: "exploit", icon: '&#xea25;', lists: []
+        label: "exploit", icon: '&#xea25;', lists: [
+            {
+                title: "JSON 格式化",
+                url: "jsonformatting",
+                logo: "",
+                tag: ["JSON", "格式化", "美化"],
+                intro: "这是一款JSON格式化工具，支持选择JSON、上传JSON或直接输入JSON代码。",
+                time: "2024-12-8"
+            },
+        ]
     }, {
         type: '运维',
         label: "ops", icon: '&#xeaec;', lists: []
