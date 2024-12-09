@@ -57,10 +57,22 @@ const routes = [
                         path: 'audiospeedchange',
                         component: () => import('@/views/tool/projects/AudioSpeedChange/index.vue'),
                         meta: { title: "toolbox.navs.audiospeedchange", tier: 3 },
-                    },{
+                    }, {
                         path: 'jsonformatting',
                         component: () => import('@/views/tool/projects/JsonFormatting/index.vue'),
                         meta: { title: "toolbox.navs.jsonformatting", tier: 3 },
+                    }, {
+                        path: 'minecraftachievement',
+                        component: () => import('@/views/tool/projects/MineCraftAchievement/index.vue'),
+                        meta: { title: "toolbox.navs.minecraftachievement", tier: 3 },
+                    }, {
+                        path: 'periodictableofelements',
+                        component: () => import('@/views/tool/projects/PeriodicTableOfElements/index.vue'),
+                        meta: { title: "toolbox.navs.periodictableofelements", tier: 3 },
+                    }, {
+                        path: 'jsontransfertable',
+                        component: () => import('@/views/tool/projects/JsonTransferTable/index.vue'),
+                        meta: { title: "toolbox.navs.jsontransfertable", tier: 3 },
                     },
 
                 ]

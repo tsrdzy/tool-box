@@ -2,7 +2,17 @@ import { contextBridge, ipcRenderer } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 
 // Custom APIs for renderer
-const api = {}
+const api = {
+  getsystemfont: () => {
+    return ipcRenderer.invoke('getsystemfont');
+  },
+  getconfig: () => {
+    return ipcRenderer.invoke('getconfig');
+  },
+  setconfig: (data) => {
+    ipcRenderer.send('setconfig', data);
+  },
+}
 //控制按钮
 const setbutton = {
   minimize: () => {

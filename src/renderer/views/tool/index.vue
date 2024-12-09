@@ -123,7 +123,7 @@ const typelists = ref([
                 intro: "这是一款base64编码转换工具，支持文本、图片、文件等格式的转换。",
                 time: "2024-11-20"
             }, {
-                title: "文字&网址转二维码",
+                title: "文字 & 网址转二维码",
                 url: "qrcodegeneration",
                 logo: "&#xe63e;",
                 tag: ["转换", "二维码", "生成"],
@@ -135,7 +135,16 @@ const typelists = ref([
     {
         type: '文档',
         label: "document", icon: '&#xea27;',
-        lists: []
+        lists: [
+            {
+                title: "JSON转表格",
+                url: "JsonTransferTable",
+                logo: "",
+                tag: ["转换", "表格", "生成", "JSON"],
+                intro: "这是一款JSON和表格相互转换的工具，支持上传JSON或直接输入JSON代码，可自定义输出。",
+                time: "2024-12-9"
+            },
+        ]
     },
     {
         type: '图像',
@@ -162,7 +171,7 @@ const typelists = ref([
         label: "audio", icon: '&#xea6d;',
         lists: [
             {
-                title: "音频变速(无下载)",
+                title: "音频变速(仅预览)",
                 url: "audiospeedchange",
                 logo: "",
                 tag: ["变速", "处理", "音效"],
@@ -194,7 +203,16 @@ const typelists = ref([
         label: "design", icon: '&#xea1f;', lists: []
     }, {
         type: '学术',
-        label: "science", icon: '&#xea24;', lists: []
+        label: "science", icon: '&#xea24;', lists: [
+            {
+                title: "元素周期表",
+                url: "periodictableofelements",
+                logo: "",
+                tag: ["元素", "周期表", "查询"],
+                intro: "这是一款元素周期表工具，可查询元素、查询属性等参数。",
+                time: "2024-12-9"
+            },
+        ]
     }, {
         type: '计算',
         label: "compute", icon: '&#xea34;', lists: [
@@ -241,7 +259,15 @@ const typelists = ref([
                 tag: ["测试", "键盘", "输入"],
                 intro: "这是一款键盘测试工具，可检测当前键盘是否有坏键。Fn键目前无法检测",
                 time: "2023-10-20"
-            }]
+            }, {
+                title: "我的世界成就生成器",
+                url: "minecraftachievement",
+                logo: "",
+                tag: ["成就", "生成", "我的世界"],
+                intro: "这是一款我的世界成就生成工具，可自定义设置成就名称、描述和图标。",
+                time: "2023-10-20"
+            },
+        ]
     }
 ])
 const isCollapse = ref(true);

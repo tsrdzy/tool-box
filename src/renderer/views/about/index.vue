@@ -82,7 +82,8 @@
                         <div v-else class="iconfont-color logo">&#xe62e;</div>
                         <div class="content">{{ ct.name }}</div>
                         <hr>
-                        <div class="urls">
+                        <div  class="content">{{ ct.version }}</div>
+                        <!-- <div class="urls">
                             <a v-if="ct.web != ''" class="url iconfont" target="_blank" :href="ct.web"
                                 alt="官网">&#xe601;</a>
                             <a v-else class="nourl iconfont">&#xe601;</a>
@@ -97,7 +98,7 @@
                             <a v-if="ct.npmurl != ''" class="url iconfont" target="_blank" :href="ct.npmurl"
                                 alt="npm">&#xe6de;</a>
                             <a v-else class="nourl iconfont">&#xe6de;</a>
-                        </div>
+                        </div> -->
                     </div>
                 </el-card>
             </div>
@@ -110,106 +111,239 @@
 import { ref } from "vue";
 const correlationTechnique = ref([
     {
-        name: "node.js",
-        icon: "&#xe71d;",
-        img: "",
-        github: "https://github.com/nodejs/node",
-        wiki: "https://nodejs.org/docs/latest/api/",
-        web: "&#xe71d;",
-        npmurl: "https://www.npmjs.com/"
+        "name": "node.js",
+        "icon": "&#xe71d;",
+        "img": "",
+        "version": ""
     },
     {
-        name: "electron",
-        icon: "&#xe7d7;",
-        img: "",
-        github: "https://github.com/electron/electron",
-        wiki: "https://www.electronjs.org/docs",
-        web: "https://www.electronjs.org",
-        npmurl: "https://www.npmjs.com/package/electron"
+        "name": "electron",
+        "icon": "&#xe7d7;",
+        "img": "",
+        "version": "31.0.2"
     },
     {
-        name: "vue3",
-        icon: "&#xe799;",
-        img: "",
-        github: "https://github.com/vuejs/vue-next",
-        wiki: "https://v3.vuejs.org/guide/introduction.html",
-        web: "https://v3.vuejs.org/",
-        npmurl: "https://www.npmjs.com/package/@vue/runtime-core"
+        "name": "vue3",
+        "icon": "&#xe799;",
+        "img": "",
+        "version": "3.4.30"
     },
     {
-        name: "iconfont",
-        icon: "&#xe60c;",
-        img: "",
-        github: "",
-        wiki: "",
-        web: "https://www.iconfont.cn/",
-        npmurl: ""
-    }, {
-        name: "element-plus",
-        icon: "&#xe690;",
-        img: "",
-        github: "https://github.com/element-plus/element-plus",
-        wiki: "https://element-plus.org/zh-CN/component/overview.html",
-        web: "https://element-plus.org/",
-        npmurl: "https://www.npmjs.com/package/element-plus"
-    }, {
-        name: "vuex",
-        icon: "",
-        img: "",
-        github: "https://github.com/vuejs/vuex",
-        wiki: "https://vuex.vuejs.org/zh/guide",
-        web: "https://vuex.vuejs.org/zh/",
-        npmurl: "https://www.npmjs.com/package/@vue/composition-api"
-    }, {
-        name: "vue-router",
-        icon: "",
-        img: "",
-        github: "https://github.com/vuejs/vue-router",
-        wiki: "https://next.router.vuejs.org/zh/",
-        web: "https://next.router.vuejs.org/zh/",
-        npmurl: "https://www.npmjs.com/package/@vue/composition-api"
-    }, {
-        name: "vue-i18n",
-        icon: "",
-        img: "",
-        github: "https://github.com/vuejs/vue-i18n",
-        wiki: "https://vue-i18n.intlify.dev/guide/",
-        web: "https://vue-i18n.intlify.dev/",
-        npmurl: "https://www.npmjs.com/package/@vue/composition-api"
-    }, {
-        name: "font-list.js",
-        icon: "",
-        img: "",
-        github: "github.com/oldj/node-font-list",
-        wiki: "",
-        web: "",
-        npmurl: "https://www.npmjs.com/package/font-list"
-    }, {
-        name: "systeminformation.js",
-        icon: "",
-        img: "",
-        github: "https://github.com/sebhildebrandt/systeminformation",
-        wiki: "https://systeminformation.io/examples.html",
-        web: "https://systeminformation.io/",
-        npmurl: "https://www.npmjs.com/package/systeminformation"
-    }, {
-        name: "sass",
-        icon: "&#xe6d0;",
-        img: "",
-        github: "https://github.com/sass/dart-sass",
-        wiki: "https://sass.bootcss.com/documentation",
-        web: "https://sass.bootcss.com/",
-        npmurl: "https://www.npmjs.com/package/sass"
-    }, {
-        name: "sortable",
-        icon: "",
-        img: "",
-        github: "https://github.com/SortableJS/sortable",
-        wiki: "https://sortablejs.github.io/Sortable/",
-        web: "https://sortablejs.github.io/Sortable/",
-        npmurl: "https://www.npmjs.com/package/@types/sortablejs"
+        "name": "iconfont",
+        "icon": "&#xe60c;",
+        "img": "",
+        "version": ""
+    },
+    {
+        "name": "element-plus",
+        "icon": "&#xe690;",
+        "img": "",
+        "version": "2.9.0"
+    },
+    {
+        "name": "vuex",
+        "icon": "",
+        "img": "",
+        "version": "4.1.0"
+    },
+    {
+        "name": "vue-router",
+        "icon": "",
+        "img": "",
+        "version": "4.5.0"
+    },
+    {
+        "name": "vue-i18n",
+        "icon": "",
+        "img": "",
+        "version": "10.0.5"
+    },
+    {
+        "name": "font-list.js",
+        "icon": "",
+        "img": "",
+        "version": "1.5.1"
+    },
+    {
+        "name": "systeminformation.js",
+        "icon": "",
+        "img": "",
+        "version": ""
+    },
+    {
+        "name": "sass",
+        "icon": "&#xe6d0;",
+        "img": "",
+        "version": "1.82.0"
+    },
+    {
+        "name": "sortable",
+        "icon": "",
+        "img": "",
+        "version": ""
+    },
+    {
+        "name": "@electron-toolkit/preload",
+        "icon": "",
+        "img": "",
+        "version": "3.0.1"
+    },
+    {
+        "name": "@electron-toolkit/utils",
+        "icon": "",
+        "img": "",
+        "version": "3.0.0"
+    },
+    {
+        "name": "compressorjs",
+        "icon": "",
+        "img": "",
+        "version": "1.2.1"
+    },
+    {
+        "name": "electron-store",
+        "icon": "",
+        "img": "",
+        "version": "8.2.0"
+    },
+    {
+        "name": "electron-updater",
+        "icon": "",
+        "img": "",
+        "version": "6.1.7"
+    },
+    {
+        "name": "file-saver",
+        "icon": "",
+        "img": "",
+        "version": "2.0.5"
+    },
+    {
+        "name": "howler",
+        "icon": "",
+        "img": "",
+        "version": "2.2.4"
+    },
+    {
+        "name": "html2canvas",
+        "icon": "",
+        "img": "",
+        "version": "1.4.1"
+    },
+    {
+        "name": "jimp",
+        "icon": "",
+        "img": "",
+        "version": "1.6.0"
+    },
+    {
+        "name": "js-base64",
+        "icon": "",
+        "img": "",
+        "version": "3.7.7"
+    },
+    {
+        "name": "jszip",
+        "icon": "",
+        "img": "",
+        "version": "3.10.1"
+    },
+    {
+        "name": "mathjs",
+        "icon": "",
+        "img": "",
+        "version": "14.0.0"
+    },
+    {
+        "name": "print-js",
+        "icon": "",
+        "img": "",
+        "version": "1.6.0"
+    },
+    {
+        "name": "qrcode",
+        "icon": "",
+        "img": "",
+        "version": "1.5.4"
+    },
+    {
+        "name": "vue-json-viewer",
+        "icon": "",
+        "img": "",
+        "version": "3.0.4"
+    },
+    {
+        "name": "xlsx",
+        "icon": "",
+        "img": "",
+        "version": "0.18.5"
+    },
+    {
+        "name": "@electron-toolkit/eslint-config",
+        "icon": "",
+        "img": "",
+        "version": "1.0.2"
+    },
+    {
+        "name": "@rushstack/eslint-patch",
+        "icon": "",
+        "img": "",
+        "version": "1.10.3"
+    },
+    {
+        "name": "@vitejs/plugin-vue",
+        "icon": "",
+        "img": "",
+        "version": "5.0.5"
+    },
+    {
+        "name": "@vue/eslint-config-prettier",
+        "icon": "",
+        "img": "",
+        "version": "9.0.0"
+    },
+    {
+        "name": "electron-builder",
+        "icon": "",
+        "img": "",
+        "version": "24.13.3"
+    },
+    {
+        "name": "electron-vite",
+        "icon": "",
+        "img": "",
+        "version": "2.3.0"
+    },
+    {
+        "name": "eslint",
+        "icon": "",
+        "img": "",
+        "version": "8.57.0"
+    },
+    {
+        "name": "eslint-plugin-vue",
+        "icon": "",
+        "img": "",
+        "version": "9.26.0"
+    },
+    {
+        "name": "prettier",
+        "icon": "",
+        "img": "",
+        "version": "3.3.2"
+    },
+    {
+        "name": "sass-loader",
+        "icon": "",
+        "img": "",
+        "version": "16.0.4"
+    },
+    {
+        "name": "vite",
+        "icon": "",
+        "img": "",
+        "version": "5.3.1"
     }
-
 ]);
 </script>
 <style lang=scss scoped>
@@ -217,20 +351,26 @@ const correlationTechnique = ref([
     .el-card {
         backdrop-filter: blur(2px);
     }
+
     margin: 20px;
+
     .head {
         width: 100%;
+
         .el-col {
             text-align: center;
         }
     }
+
     .cards {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
         gap: 10px;
+
         .el-card {
             margin-bottom: 20px;
             padding: 2px;
+
             .logo {
                 display: block;
                 width: 50px;
@@ -242,6 +382,7 @@ const correlationTechnique = ref([
                 line-height: 50px;
                 font-size: 28px;
             }
+
             .content {
                 text-align: center;
                 font-size: 12px;
@@ -249,18 +390,22 @@ const correlationTechnique = ref([
                 text-overflow: ellipsis;
                 white-space: nowrap;
             }
+
             .urls {
                 display: flex;
                 justify-content: space-around;
+
                 .url {
                     border: 1px solid;
                     padding: 2px;
                     border-radius: 4px;
                     margin: 2px;
+
                     &:hover {
                         background-color: #77777777;
                     }
                 }
+
                 .nourl {
                     background-color: #777777bb;
                     border: 1px solid;
@@ -269,18 +414,22 @@ const correlationTechnique = ref([
                     margin: 2px;
                 }
             }
+
             &:hover {
                 box-shadow: 0 0 5px;
             }
         }
     }
+
     .cards_1 {
         .el-card {
             --el-card-padding: 5px;
+
             &:hover {
                 box-shadow: 0 0 5px;
             }
         }
+
         .logo_1 {
             width: 100%;
             height: 24px;
