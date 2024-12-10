@@ -60,6 +60,9 @@
 import { ref } from 'vue'
 import { saveAs } from 'file-saver';
 import { ElNotification } from 'element-plus';
+
+import { useStore } from 'vuex'
+const store = useStore()
 import JSZip from 'jszip';
 const fileList = ref([])
 const compressionfile = ref([])
@@ -122,8 +125,10 @@ function saveimage() {
             saveAs(content, 'ToolBoxImages.zip')
         })
     } else {
-        const audio = new Audio("../assets/audios/hint.wav")
-        audio.play();
+        if (store.state.setting.config.audio) {
+            const audio = new Audio("../assets/audios/hint.wav")
+            audio.play();
+        }
         ElNotification.error({
             title: '错误',
             message: '请先压缩图片后再保存',

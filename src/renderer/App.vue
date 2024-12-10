@@ -14,9 +14,6 @@ onMounted(() => {
   theme()
   getConfig()
 });
-// function ass1() {
-//   console.log(store.state.setting.config)
-// }
 //获取语言
 function getLanguage() {
   const languages = []
@@ -38,17 +35,59 @@ function theme() {
 }
 //获取配置文件
 async function getConfig() {
-  const config = await api.getconfig()
-  if (
-    config.font == undefined ||
-    config.theme == undefined ||
-    config.language == undefined || 
-    config.audio == undefined) {
-    const nowconfig = { font: 'opposans', theme: 'dark', language: 'zhCn',audio:true }
-    api.setconfig(nowconfig)
-    store.commit('setting/setConfig', nowconfig)
+  const font = await api.getconfig('font')
+  if (!font) {
+
+    api.setconfig('font', 'opposans')
+    store.commit('setting/setConfigFont', 'opposans')
   } else {
-    store.commit('setting/setConfig', config)
+    store.commit('setting/setConfigFont', font)
+  }
+
+  const theme = await api.getconfig('theme')
+  if (!theme) {
+    api.setconfig('theme', 'dark')
+    store.commit('setting/setConfigTheme', 'dark')
+  } else {
+    store.commit('setting/setConfigTheme', theme)
+  }
+
+  const audio = await api.getconfig('audio')
+  if (audio == undefined) {
+    api.setconfig('audio', true)
+    store.commit('setting/setConfigAudio', true)
+  }
+
+  const showbg = await api.getconfig('showbg')
+  if (showbg == undefined) {
+    api.setconfig('showbg', true)
+    store.commit('setting/setConfigShowBg', false)
+  } else {
+    store.commit('setting/setConfigShowBg', showbg)
+  }
+
+  const bg = await api.getconfig('bg')
+  if (bg == undefined) {
+    api.setconfig('bg', '')
+    store.commit('setting/setConfigBg', '')
+  } else {
+    store.commit('setting/setConfigBg', bg)
+  }
+
+  const language = await api.getconfig('language')
+  if (language == undefined) {
+    api.setconfig('language', 'zhCn')
+    store.commit('setting/setConfigLanguage', 'zhCn')
+  } else {
+    store.commit('setting/setConfigLanguage', language)
+  }
+
+  const collect = await api.getconfig('collect')
+  if (collect == undefined) {
+    api.setconfig('collect', [])
+    store.commit('setting/setConfigCollect', [])
+  } else {
+    store.commit('setting/setConfigCollect', collect)
   }
 }
 </script>

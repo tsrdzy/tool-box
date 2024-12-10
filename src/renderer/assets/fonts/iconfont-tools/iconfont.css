@@ -1,7 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4773431 */
-  src: url('iconfont.woff2?t=1733549880204') format('woff2'),
-       url('iconfont.woff?t=1733549880204') format('woff');
+  src: url('iconfont.woff2?t=1733828438831') format('woff2');
 }
 
 .iconfont {
@@ -10,6 +9,34 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Activity-SVGtubiao-:before {
+  content: "\e7b6";
+}
+
+.icon-minecraft_logo:before {
+  content: "\ef4d";
+}
+
+.icon-geshihua:before {
+  content: "\e65e";
+}
+
+.icon-a-icgengduoyuansuzhouqibiao:before {
+  content: "\e63a";
+}
+
+.icon-tupianzhuanBase64:before {
+  content: "\e647";
+}
+
+.icon-Data-magnitude:before {
+  content: "\e625";
+}
+
+.icon-tupianyasuo:before {
+  content: "\e610";
 }
 
 .icon-suijishu:before {

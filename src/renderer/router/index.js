@@ -73,6 +73,15 @@ const routes = [
                         path: 'jsontransfertable',
                         component: () => import('@/views/tool/projects/JsonTransferTable/index.vue'),
                         meta: { title: "toolbox.navs.jsontransfertable", tier: 3 },
+                    }, {
+                        path: 'markdowneditor',
+                        component: () => import('@/views/tool/projects/MarkDownEditor/index.vue'),
+                        meta: { title: "toolbox.navs.markdowneditor", tier: 3 },
+                    },
+                    {
+                        path: 'chinesecharacterstopinyin',
+                        component: () => import('@/views/tool/projects/ChineseCharactersToPinyin/index.vue'),
+                        meta: { title: "toolbox.navs.chinesecharacterstopinyin", tier: 3 },
                     },
 
                 ]

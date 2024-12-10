@@ -43,6 +43,8 @@
 import { utils, writeFileXLSX } from "xlsx";
 import { ref } from "vue"
 import { ElNotification } from "element-plus";
+import { useStore } from 'vuex'
+const store = useStore()
 const jsondata = ref('')//json数据
 const isdatacheck = ref(false)//是否正在转换
 const datacheckcontent = ref('当前JSON为空')//当前JSON格式错误
@@ -58,8 +60,10 @@ async function startransfer() {
     if (datacheck() != true) {
         return
     }
-    const audio = new Audio("../assets/audios/hint.wav")
-    audio.play()
+    if (store.state.setting.config.audio) {
+            const audio = new Audio("../assets/audios/hint.wav")
+            audio.play();
+        }
     ElNotification.success({
         title: '提示',
         message: '正在转换中,请稍等片刻...',

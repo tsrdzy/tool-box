@@ -26,7 +26,7 @@
             </template>
             <Ttheme></Ttheme>
         </el-card>
-        
+
         <el-card class="head">
             <template #header>
                 <div class="card-header">
@@ -34,6 +34,15 @@
                 </div>
             </template>
             <Taudio></Taudio>
+        </el-card>
+
+        <el-card class="head">
+            <template #header>
+                <div class="card-header">
+                    <span>背景</span>
+                </div>
+            </template>
+            <Tbackground></Tbackground>
         </el-card>
         <br>
     </div>
@@ -44,10 +53,11 @@ import Tlanguage from "@/views/setting/modules/language.vue"
 import Tfont from "@/views/setting/modules/font.vue"
 import Ttheme from "@/views/setting/modules/theme.vue"
 import Taudio from "@/views/setting/modules/audio.vue";
+import Tbackground from "@/views/setting/modules/background.vue";
 </script>
 <style lang=scss scoped>
-.setting{
-    .el-card{
+.setting {
+    .el-card {
         margin: 20px;
     }
 }

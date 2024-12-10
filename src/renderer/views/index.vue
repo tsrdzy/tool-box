@@ -1,5 +1,5 @@
 <template>
-    <!-- <div class="bg"></div> -->
+    <div class="bg" v-if="store.state.setting.config.showbg"></div>
     <Theader></Theader>
     <TBreadcrumb></TBreadcrumb>
     <el-backtop target=".el-scrollbar__wrap" :visibility-height="50" :right="30" :bottom="30" />
@@ -11,6 +11,9 @@
 <script setup>
 import Theader from '@/components/header/index.vue'
 import TBreadcrumb from '@/components/breadcrumb/index.vue'
+import { useStore } from 'vuex'
+const store = useStore()
+
 </script>
 
 <style lang="scss" scoped>

@@ -38,6 +38,10 @@ const color1 = ref('#000000')
 const color2 = ref('#ffffff')
 import { ElNotification } from 'element-plus'
 import { saveAs } from 'file-saver';
+
+import { useStore } from 'vuex'
+const store = useStore()
+
 function generateQrcode() {
     const canvas = document.getElementById('qrcodeCanvas')
     QRCode.toCanvas(canvas, textarea.value, {
@@ -53,9 +57,11 @@ function generateQrcode() {
     })
 }
 function ks() {
-    const audio = new Audio("../assets/audios/hint.wav")
     if (!textarea.value) {
-        audio.play();
+        if (store.state.setting.config.audio) {
+            const audio = new Audio("../assets/audios/hint.wav")
+            audio.play();
+        }
         ElNotification.error({
             title: '错误',
             message: '请先输入待转换的文本',
