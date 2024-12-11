@@ -57,13 +57,13 @@
                 </div>
             </template>
             <div class="cards cards_1">
-                <a target="_blank" href="https://pixabay.com/" style="margin: 5px;width: 140px;">
+                <a :key="specialthank" v-for="specialthank in specialthanks" target="_blank" :href="specialthank.url"
+                    style="margin: 5px;width: 140px;">
                     <el-card>
-                        <div class="iconfont-color logo_1">&#xe60d;</div>
-                    </el-card>
-                </a><a target="_blank" href="https://pixabay.com/" style="margin: 5px;width: 140px;">
-                    <el-card>
-                        <div class="iconfont-color logo_1">&#xe60e;</div>
+                        <div v-if="specialthank.icon != ''" class="iconfont-color logo_1" v-html="specialthank.icon">
+                        </div>
+                        <img :src="specialthank.logo" v-if="specialthank.logo != ''" class="logo_1" />
+                        <div class="logo_1" v-if="specialthank.logo == '' && specialthank.icon == ''">HAN</div>
                     </el-card>
                 </a>
             </div>
@@ -82,7 +82,7 @@
                         <div v-else class="iconfont-color logo">&#xe62e;</div>
                         <div class="content">{{ ct.name }}</div>
                         <hr>
-                        <div  class="content">{{ ct.version }}</div>
+                        <div class="content">{{ ct.version }}</div>
                         <!-- <div class="urls">
                             <a v-if="ct.web != ''" class="url iconfont" target="_blank" :href="ct.web"
                                 alt="官网">&#xe601;</a>
@@ -127,12 +127,6 @@ const correlationTechnique = ref([
         "icon": "&#xe799;",
         "img": "",
         "version": "3.4.30"
-    },
-    {
-        "name": "iconfont",
-        "icon": "&#xe60c;",
-        "img": "",
-        "version": ""
     },
     {
         "name": "element-plus",
@@ -345,6 +339,15 @@ const correlationTechnique = ref([
         "version": "5.3.1"
     }
 ]);
+
+const specialthanks = ref([
+    { url: "https://pixabay.com/", logo: "", icon: "&#xe60d;" },
+    { url: "https://github.com/", logo: "", icon: "&#xe60e;" },
+    { url: "https://api.vvhan.com/", logo: "", icon: "" },
+    { url: "https://www.iconfont.cn/", logo: "../../assets/images/about/iconfont.svg", icon: "" },
+
+    { url: "https://iconpark.oceanengine.com/", logo: "../../assets/images/about/iconpark.svg", icon: "" },
+])
 </script>
 <style lang=scss scoped>
 .about {
@@ -432,7 +435,8 @@ const correlationTechnique = ref([
 
         .logo_1 {
             width: 100%;
-            height: 24px;
+            max-height: 24px;
+            min-height: 24px;
             line-height: 24px;
             text-align: center;
         }

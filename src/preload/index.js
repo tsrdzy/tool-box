@@ -13,6 +13,9 @@ const api = {
   setconfig: (key, data) => {
     ipcRenderer.send('setconfig', key, data);
   },
+  getrequest: (url) => {
+    return ipcRenderer.invoke('getrequest', url);
+  }
 }
 
 if (process.contextIsolated) {

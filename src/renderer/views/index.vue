@@ -1,5 +1,5 @@
 <template>
-    <div class="bg" v-if="store.state.setting.config.showbg"></div>
+    <div id="bg" class="bg" v-if="store.state.setting.config.showbg"></div>
     <Theader></Theader>
     <TBreadcrumb></TBreadcrumb>
     <el-backtop target=".el-scrollbar__wrap" :visibility-height="50" :right="30" :bottom="30" />
@@ -11,8 +11,27 @@
 <script setup>
 import Theader from '@/components/header/index.vue'
 import TBreadcrumb from '@/components/breadcrumb/index.vue'
+import { onMounted, computed, watch } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
+onMounted(() => {
+    randombg()
+
+})
+async function randombg() {
+    const url = 'https://api.vvhan.com/api/wallpaper/acg?type=json'
+    const bg = await api.getrequest(url)
+    const bghtml = document.getElementById('bg')
+    bghtml.style.backgroundImage = `linear-gradient(to top, rgba(128, 128, 128, 0), var(--el-bg-color)),url(${bg.url})`
+}
+//计算属性检测是否开启背景
+const isbg = computed(() => { store.state.setting.config.showbg })
+//watch检测如果计算属性发生变化，执行打印1
+watch(isbg, (val) => {
+    // store.state.setting.config.showbg
+    randombg()
+})
+
 
 </script>
 
@@ -26,10 +45,9 @@ const store = useStore()
     z-index: -100;
     background-size: cover;
     background-position: center;
-
-    background-image:
-        linear-gradient(to top, rgba(128, 128, 128, 0), var(--el-bg-color)),
-        url('@/assets/images/home/bg2.jpg');
+    // background-image:
+    //     linear-gradient(to top, rgba(128, 128, 128, 0), var(--el-bg-color)),
+    //     url('@/assets/images/home/bg2.jpg');
 }
 
 .main {

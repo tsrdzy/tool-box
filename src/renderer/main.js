@@ -12,7 +12,9 @@ import 'element-plus/theme-chalk/dark/css-vars.css'
 
 import '@imengyu/vue3-context-menu/lib/vue3-context-menu.css'
 
-createApp(App).use(i18n)
+
+const app = createApp(App)
+app.use(i18n)
     .use(router)
     .use(store)
     .use(ElementPlus)

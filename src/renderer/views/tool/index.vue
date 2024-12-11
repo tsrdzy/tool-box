@@ -16,7 +16,7 @@
                                     <!-- <el-tag size="small" type="primary">{{ 1 }}</el-tag> -->
                                     <el-tag size="small" type="primary" :key="tag" v-for="tag in item.tag">{{
                                         tag
-                                    }}</el-tag>
+                                        }}</el-tag>
                                 </div>
                             </div>
                         </div>
@@ -282,6 +282,14 @@ const typelists = ref([
         logo: "",
         tag: ["转换", "汉字", "拼音", "文本", " 文档", "教育", "益智", "学习"],
         intro: "这是一款汉字转拼音工具，支持输入中文或直接输出拼音。",
+        time: "2024-12-11"
+    }, {
+        title: "IP查询",
+        url: "IPAddressQuery",
+        logo: "",
+        tag: ["查询", "IP", "地址", "位置"],
+
+        intro: "这是一款IP查询工具，支持输入IP地址或直接相关信息。",
         time: "2024-12-11"
     },
 ]

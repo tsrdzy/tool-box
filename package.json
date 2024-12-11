@@ -22,6 +22,7 @@
     "@electron-toolkit/utils": "^3.0.0",
     "@imengyu/vue3-context-menu": "^1.4.4",
     "@kangc/v-md-editor": "^2.3.18",
+    "axios": "^1.7.9",
     "compressorjs": "^1.2.1",
     "electron-store": "^8.2.0",
     "electron-updater": "^6.1.7",

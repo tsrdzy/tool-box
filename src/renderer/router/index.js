@@ -82,6 +82,10 @@ const routes = [
                         path: 'chinesecharacterstopinyin',
                         component: () => import('@/views/tool/projects/ChineseCharactersToPinyin/index.vue'),
                         meta: { title: "toolbox.navs.chinesecharacterstopinyin", tier: 3 },
+                    }, {
+                        path: 'ipaddressquery',
+                        component: () => import('@/views/tool/projects/IPAddressQuery/index.vue'),
+                        meta: { title: "toolbox.navs.ipaddressquery", tier: 3 },
                     },
 
                 ]
