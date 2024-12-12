@@ -5,13 +5,18 @@
     </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
-const background = ref(store.state.setting.config.showbg)
+const background = ref(false)
 // 切换主题
+onMounted(() => {
+    background.value = store.state.setting.config.showbg
+})
 const isbackground = () => {
+    console.log(background.value)
     store.commit('setting/setConfigShowBg', background.value)
+    console.log(store.state.setting.config.showbg)
 }
 </script>
 <style lang=scss scoped></style>

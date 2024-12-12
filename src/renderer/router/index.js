@@ -86,6 +86,18 @@ const routes = [
                         path: 'ipaddressquery',
                         component: () => import('@/views/tool/projects/IPAddressQuery/index.vue'),
                         meta: { title: "toolbox.navs.ipaddressquery", tier: 3 },
+                    },{
+                        path: 'phonenumberquery',
+                        component: () => import('@/views/tool/projects/PhoneNumberQuery/index.vue'),
+                        meta: { title: "toolbox.navs.phonenumberquery", tier: 3 },
+                    },{
+                        path: 'weatherinquiry',
+                        component: () => import('@/views/tool/projects/WeatherInquiry/index.vue'),
+                        meta: { title: "toolbox.navs.weatherinquiry", tier: 3 },
+                    },{
+                        path: 'icprecordinquiry',
+                        component: () => import('@/views/tool/projects/ICPRecordInquiry/index.vue'),
+                        meta: { title: "toolbox.navs.icprecordinquiry", tier: 3 },
                     },
 
                 ]

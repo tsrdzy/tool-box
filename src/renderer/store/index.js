@@ -12,6 +12,6 @@ export default createStore({
     },
     modules: {
         setting,
-        tool
+        tool,
     },
 })

@@ -59,11 +59,11 @@
             <div class="cards cards_1">
                 <a :key="specialthank" v-for="specialthank in specialthanks" target="_blank" :href="specialthank.url"
                     style="margin: 5px;width: 140px;">
-                    <el-card>
+                    <el-card class="specialthanks">
                         <div v-if="specialthank.icon != ''" class="iconfont-color logo_1" v-html="specialthank.icon">
                         </div>
                         <img :src="specialthank.logo" v-if="specialthank.logo != ''" class="logo_1" />
-                        <div class="logo_1" v-if="specialthank.logo == '' && specialthank.icon == ''">HAN</div>
+                        <div class="logo_1" v-if="specialthank.text != ''">{{ specialthank.text }}</div>
                     </el-card>
                 </a>
             </div>
@@ -341,12 +341,13 @@ const correlationTechnique = ref([
 ]);
 
 const specialthanks = ref([
-    { url: "https://pixabay.com/", logo: "", icon: "&#xe60d;" },
-    { url: "https://github.com/", logo: "", icon: "&#xe60e;" },
-    { url: "https://api.vvhan.com/", logo: "", icon: "" },
-    { url: "https://www.iconfont.cn/", logo: "../../assets/images/about/iconfont.svg", icon: "" },
-
-    { url: "https://iconpark.oceanengine.com/", logo: "../../assets/images/about/iconpark.svg", icon: "" },
+    { url: "https://pixabay.com/", logo: "", icon: "&#xe60d;", text: "" },
+    { url: "https://github.com/", logo: "", icon: "&#xe60e;", text: "" },
+    { url: "https://api.vvhan.com/", logo: "", icon: "", text: "HAN" },
+    { url: "https://www.iconfont.cn/", logo: "../../assets/images/about/iconfont.svg", icon: "", text: "" },
+    { url: "https://uapis.cn/", logo: "", icon: "", text: "UAPI" },
+    { url: "https://iconpark.oceanengine.com/", logo: "../../assets/images/about/iconpark.svg", icon: "", text: "" },
+    { url: "https://api.leafone.cn/", logo: "", icon: "", text: "API Gallery" },
 ])
 </script>
 <style lang=scss scoped>
@@ -426,7 +427,8 @@ const specialthanks = ref([
 
     .cards_1 {
         .el-card {
-            --el-card-padding: 5px;
+            --el-card-padding: 10px;
+            height: 40px;
 
             &:hover {
                 box-shadow: 0 0 5px;
@@ -439,6 +441,11 @@ const specialthanks = ref([
             min-height: 24px;
             line-height: 24px;
             text-align: center;
+
+        }
+
+        a {
+            height: 40px;
         }
     }
 }

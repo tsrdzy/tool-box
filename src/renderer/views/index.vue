@@ -1,5 +1,6 @@
 <template>
-    <div id="bg" class="bg" v-if="store.state.setting.config.showbg"></div>
+    <div id="bg" style="background-image:linear-gradient(to top, rgba(128, 128, 128, 0), var(--el-bg-color)),url()"
+        class="bg" v-if="store.state.setting.config.showbg"></div>
     <Theader></Theader>
     <TBreadcrumb></TBreadcrumb>
     <el-backtop target=".el-scrollbar__wrap" :visibility-height="50" :right="30" :bottom="30" />
@@ -18,18 +19,23 @@ onMounted(() => {
     randombg()
 
 })
-async function randombg() {
-    const url = 'https://api.vvhan.com/api/wallpaper/acg?type=json'
-    const bg = await api.getrequest(url)
-    const bghtml = document.getElementById('bg')
-    bghtml.style.backgroundImage = `linear-gradient(to top, rgba(128, 128, 128, 0), var(--el-bg-color)),url(${bg.url})`
+async function randombg(data) {
+
+        const url = 'https://api.vvhan.com/api/wallpaper/acg?type=json'
+        const bg = await api.getrequest(url)
+        const bghtml = document.getElementById('bg')
+        bghtml.style.backgroundImage = `linear-gradient(to top, rgba(128, 128, 128, 0), var(--el-bg-color)),url(${bg.url})`
+    
+
 }
 //计算属性检测是否开启背景
 const isbg = computed(() => { store.state.setting.config.showbg })
+console.log(isbg)
 //watch检测如果计算属性发生变化，执行打印1
 watch(isbg, (val) => {
-    // store.state.setting.config.showbg
-    randombg()
+    // store.state.setting.config.showbg 
+    console.log(val)
+    randombg(val)
 })
 
 

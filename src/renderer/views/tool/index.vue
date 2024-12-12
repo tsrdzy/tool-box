@@ -16,7 +16,7 @@
                                     <!-- <el-tag size="small" type="primary">{{ 1 }}</el-tag> -->
                                     <el-tag size="small" type="primary" :key="tag" v-for="tag in item.tag">{{
                                         tag
-                                        }}</el-tag>
+                                    }}</el-tag>
                                 </div>
                             </div>
                         </div>
@@ -291,7 +291,28 @@ const typelists = ref([
 
         intro: "这是一款IP查询工具，支持输入IP地址或直接相关信息。",
         time: "2024-12-11"
-    },
+    }, {
+        title: "手机号归属地查询",
+        url: "PhoneNumberQuery",
+        logo: "",
+        tag: ["查询", "手机", "地址", "位置", "手机号", "归属地", "信息"],
+        intro: "这是一款手机号归属地查询工具，支持输入手机号码获得相关信息。",
+        time: "2024-12-11"
+    }, {
+        title: "天气查询",
+        url: "WeatherInquiry",
+        logo: "",
+        tag: ["查询", "天气", "地址", "位置", "信息"],
+        intro: "这是一款天气查询工具，支持输入地址或直接查询相关信息。",
+        time: "2024-12-11"
+    }, {
+        title: "ICP备案查询",
+        url: "ICPRecordInquiry",
+        logo: "",
+        tag: ["查询", "备案", "地址", "域名", "信息", "ICP","网站"],
+        intro: "这是一款ICP备案查询工具，支持输入域名或直接查询相关注册信息。",
+        time: "2024-12-11"
+    }
 ]
 
 )
