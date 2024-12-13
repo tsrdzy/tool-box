@@ -16,7 +16,6 @@ onMounted(() => {
 const isbackground = () => {
     console.log(background.value)
     store.commit('setting/setConfigShowBg', background.value)
-    console.log(store.state.setting.config.showbg)
 }
 </script>
 <style lang=scss scoped></style>

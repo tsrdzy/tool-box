@@ -20,21 +20,18 @@ onMounted(() => {
 
 })
 async function randombg(data) {
-
+    if (data == true) {
         const url = 'https://api.vvhan.com/api/wallpaper/acg?type=json'
         const bg = await api.getrequest(url)
         const bghtml = document.getElementById('bg')
         bghtml.style.backgroundImage = `linear-gradient(to top, rgba(128, 128, 128, 0), var(--el-bg-color)),url(${bg.url})`
-    
+    }
+
+
 
 }
-//计算属性检测是否开启背景
-const isbg = computed(() => { store.state.setting.config.showbg })
-console.log(isbg)
-//watch检测如果计算属性发生变化，执行打印1
+const isbg = computed(() => { return store.state.setting.config.showbg })
 watch(isbg, (val) => {
-    // store.state.setting.config.showbg 
-    console.log(val)
     randombg(val)
 })
 

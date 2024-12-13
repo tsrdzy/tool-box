@@ -98,6 +98,10 @@ const routes = [
                         path: 'icprecordinquiry',
                         component: () => import('@/views/tool/projects/ICPRecordInquiry/index.vue'),
                         meta: { title: "toolbox.navs.icprecordinquiry", tier: 3 },
+                    },{
+                        path: 'obtaininghardwareinformation',
+                        component: () => import('@/views/tool/projects/ObtainingHardwareInformation/index.vue'),
+                        meta: { title: "toolbox.navs.obtaininghardwareinformation", tier: 3 },
                     },
 
                 ]
