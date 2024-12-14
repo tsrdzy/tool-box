@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4773431 */
-  src: url('iconfont.woff2?t=1733828438831') format('woff2');
+  src: url('iconfont.woff2?t=1734185647290') format('woff2');
 }
 
 .iconfont {
@@ -9,6 +9,42 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-ICPbeian:before {
+  content: "\e7f2";
+}
+
+.icon-xingzuoyunshi:before {
+  content: "\e69e";
+}
+
+.icon-yuwen-:before {
+  content: "\e64e";
+}
+
+.icon-jinriredian:before {
+  content: "\e704";
+}
+
+.icon-MarkDown:before {
+  content: "\e8bc";
+}
+
+.icon-mobilelocal:before {
+  content: "\e63b";
+}
+
+.icon-tianqichaxun:before {
+  content: "\e642";
+}
+
+.icon-yingjianxinxi:before {
+  content: "\e6e6";
+}
+
+.icon-IPchaxun:before {
+  content: "\e622";
 }
 
 .icon-Activity-SVGtubiao-:before {

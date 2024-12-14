@@ -16,11 +16,12 @@ import { onMounted, computed, watch } from 'vue'
 import { useStore } from 'vuex'
 const store = useStore()
 onMounted(() => {
-    randombg()
+    randombg(store.state.setting.config.showbg)
 
 })
 async function randombg(data) {
     if (data == true) {
+        console.log(1)
         const url = 'https://api.vvhan.com/api/wallpaper/acg?type=json'
         const bg = await api.getrequest(url)
         const bghtml = document.getElementById('bg')

@@ -8,16 +8,16 @@
             </template>
             <el-row>
                 <el-col :span="6">
-                    <el-statistic :title="$t('toolbox.about.accumulatedcode')" :value="268500" />
+                    <el-statistic :title="$t('toolbox.about.accumulatedcode')" :value="cumulativecode" />
                 </el-col>
                 <el-col :span="6">
-                    <el-statistic :title="$t('toolbox.about.cumulativeuse')" :value="0" />
+                    <el-statistic :title="$t('toolbox.about.cumulativeuse')" :value="numberofuse" />
                 </el-col>
                 <el-col :span="6">
-                    <el-statistic :title="$t('toolbox.about.toolcount')" :value="1" />
+                    <el-statistic :title="$t('toolbox.about.toolcount')" :value="toollength" />
                 </el-col>
                 <el-col :span="6">
-                    <el-statistic title="GitHubStar" :value="1" />
+                    <el-statistic title="GitHubStar" :value="githubstar" />
                 </el-col>
             </el-row>
         </el-card>
@@ -108,7 +108,8 @@
     </div>
 </template>
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+import typelist from '@/assets/scripts/tools.js'
 const correlationTechnique = ref([
     {
         "name": "node.js",
@@ -339,7 +340,6 @@ const correlationTechnique = ref([
         "version": "5.3.1"
     }
 ]);
-
 const specialthanks = ref([
     { url: "https://pixabay.com/", logo: "", icon: "&#xe60d;", text: "" },
     { url: "https://github.com/", logo: "", icon: "&#xe60e;", text: "" },
@@ -349,6 +349,14 @@ const specialthanks = ref([
     { url: "https://iconpark.oceanengine.com/", logo: "../../assets/images/about/iconpark.svg", icon: "", text: "" },
     { url: "https://api.leafone.cn/", logo: "", icon: "", text: "API Gallery" },
 ])
+
+const cumulativecode = ref(0)
+const numberofuse = ref(0)
+const toollength = ref(0)
+const githubstar = ref(0)
+onMounted(() => {
+    toollength.value = typelist.length
+});
 </script>
 <style lang=scss scoped>
 .about {

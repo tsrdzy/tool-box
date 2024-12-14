@@ -102,6 +102,14 @@ const routes = [
                         path: 'obtaininghardwareinformation',
                         component: () => import('@/views/tool/projects/ObtainingHardwareInformation/index.vue'),
                         meta: { title: "toolbox.navs.obtaininghardwareinformation", tier: 3 },
+                    },{
+                        path: 'horoscope',
+                        component: () => import('@/views/tool/projects/Horoscope/index.vue'),
+                        meta: { title: "toolbox.navs.horoscope", tier: 3 },
+                    },{
+                        path: 'whatshottoday',
+                        component: () => import('@/views/tool/projects/WhatsHotToday/index.vue'),
+                        meta: { title: "toolbox.navs.whatshottoday", tier: 3 },
                     },
 
                 ]
