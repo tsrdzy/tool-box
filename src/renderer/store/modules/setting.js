@@ -9,6 +9,13 @@ const state = {
         audio: true,
         showbg: false,
         bg: "",
+        showset: {
+            font: false,
+            language: false,
+            theme: false,
+            audio: false,
+            bg: false,
+        },
         collect: []
     },
     configs: {
@@ -69,7 +76,11 @@ const mutations = {
     setConfigCollect(state, collect) {
         state.config.collect = collect
         api.setconfig("collect", collect)
-    }
+    },
+    setConfigShowset(state, showset) {
+        state.config.showset = showset
+        api.setconfig("showset", showset)
+    },
 
 
 }

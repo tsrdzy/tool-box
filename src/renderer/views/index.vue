@@ -21,15 +21,11 @@ onMounted(() => {
 })
 async function randombg(data) {
     if (data == true) {
-        console.log(1)
         const url = 'https://api.vvhan.com/api/wallpaper/acg?type=json'
         const bg = await api.getrequest(url)
         const bghtml = document.getElementById('bg')
         bghtml.style.backgroundImage = `linear-gradient(to top, rgba(128, 128, 128, 0), var(--el-bg-color)),url(${bg.url})`
     }
-
-
-
 }
 const isbg = computed(() => { return store.state.setting.config.showbg })
 watch(isbg, (val) => {
