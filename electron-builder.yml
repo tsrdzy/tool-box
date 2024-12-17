@@ -1,4 +1,4 @@
-appId: com.electron.app
+appId: com.dzy.toolbox
 productName: tool-box
 directories:
   buildResources: build

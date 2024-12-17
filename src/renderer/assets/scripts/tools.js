@@ -166,6 +166,21 @@ const typelist = [
         tag: ["查询", "热点", "新闻", "时事", "时效", "搜索", "热搜"],
         intro: "这是一款可以获取今日热点新闻的工具,可以获得各个平台的热点信息,以及相关新闻",
         time: "2024-12-14"
+    }, {
+        title: "图片格式转换",
+        url: "imageformatconversion",
+        logo: "",
+        tag: ["图片", "格式", "转换", "图像","编码"],
+        intro: "这是一款图片格式转换工具,可以转换图片格式为jpg,png,gif等格式",
+        time: "2024-12-17"
+    }
+    , {
+        title: "ICO图标转换",
+        url: "icoimageformatconversion",
+        logo: "",
+        tag: ["图片", "格式", "转换", "图像","编码"],
+        intro: "这是一款ICO图标格式转换工具,可以转换图片格式为ico格式",
+        time: "2024-12-17"
     }
 ]
 export default typelist

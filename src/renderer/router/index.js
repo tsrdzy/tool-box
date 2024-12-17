@@ -86,30 +86,38 @@ const routes = [
                         path: 'ipaddressquery',
                         component: () => import('@/views/tool/projects/IPAddressQuery/index.vue'),
                         meta: { title: "toolbox.navs.ipaddressquery", tier: 3 },
-                    },{
+                    }, {
                         path: 'phonenumberquery',
                         component: () => import('@/views/tool/projects/PhoneNumberQuery/index.vue'),
                         meta: { title: "toolbox.navs.phonenumberquery", tier: 3 },
-                    },{
+                    }, {
                         path: 'weatherinquiry',
                         component: () => import('@/views/tool/projects/WeatherInquiry/index.vue'),
                         meta: { title: "toolbox.navs.weatherinquiry", tier: 3 },
-                    },{
+                    }, {
                         path: 'icprecordinquiry',
                         component: () => import('@/views/tool/projects/ICPRecordInquiry/index.vue'),
                         meta: { title: "toolbox.navs.icprecordinquiry", tier: 3 },
-                    },{
+                    }, {
                         path: 'obtaininghardwareinformation',
                         component: () => import('@/views/tool/projects/ObtainingHardwareInformation/index.vue'),
                         meta: { title: "toolbox.navs.obtaininghardwareinformation", tier: 3 },
-                    },{
+                    }, {
                         path: 'horoscope',
                         component: () => import('@/views/tool/projects/Horoscope/index.vue'),
                         meta: { title: "toolbox.navs.horoscope", tier: 3 },
-                    },{
+                    }, {
                         path: 'whatshottoday',
                         component: () => import('@/views/tool/projects/WhatsHotToday/index.vue'),
                         meta: { title: "toolbox.navs.whatshottoday", tier: 3 },
+                    }, {
+                        path: 'imageformatconversion',
+                        component: () => import('@/views/tool/projects/ImageFormatConversion/index.vue'),
+                        meta: { title: "toolbox.navs.imageformatconversion", tier: 3 },
+                    },{
+                        path: 'icoimageformatconversion',
+                        component: () => import('@/views/tool/projects/ICOImageFormatConversion/index.vue'),
+                        meta: { title: "toolbox.navs.icoimageformatconversion", tier: 3 },
                     },
 
                 ]

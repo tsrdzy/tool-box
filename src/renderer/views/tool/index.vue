@@ -182,7 +182,7 @@ function isunfold() {
 }
 
 </script>
-<style lang=scss scoped>
+<style lang="scss" scoped>
 .tool {
     height: 100%;
     width: 100%;
