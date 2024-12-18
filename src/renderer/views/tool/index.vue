@@ -8,7 +8,9 @@
                 </div>
                 <div class="cards">
                     <el-card v-on:click="openurl(item)" :key="item.title" v-for="item in typelists">
+                        <el-text class="networking iconfont" type="info" v-if="item.networking">&#xec7f;</el-text>
                         <div class="card">
+
                             <div class="card_logo iconfont" v-html="item.logo"></div>
                             <div>
                                 <div class="card_header">{{ item.title }}</div>
@@ -267,16 +269,31 @@ function isunfold() {
             --el-card-padding: 5px;
             width: 230px;
             height: 60px;
+            position: relative;
 
             &:hover {
                 box-shadow: 0 0 2px;
             }
         }
 
+        .networking {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 15px;
+            height: 15px;
+            padding: 1px;
+            background-color: #77777733;
+            border-bottom-right-radius: 100%;
+        }
+
         .card {
 
             display: flex;
             overflow: hidden;
+
+
+
 
             .card_logo {
                 min-width: 50px;

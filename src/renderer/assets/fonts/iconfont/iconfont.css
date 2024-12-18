@@ -1,6 +1,6 @@
 @font-face {
   font-family: "iconfont"; /* Project id 4770633 */
-  src: url('iconfont.woff2?t=1734246679308') format('woff2');
+  src: url('iconfont.woff2?t=1734505011572') format('woff2');
 }
 
 .iconfont {
@@ -9,6 +9,10 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-charulianjie:before {
+  content: "\ec7f";
 }
 
 .icon-translate:before {
