@@ -22,6 +22,9 @@ export default defineConfig({
         },
       },
     },
-    plugins: [vue()]
+    plugins: [vue()],
+    define: {
+      'process.env': {}
+    },
   }
 })

@@ -183,6 +183,20 @@ const typelist = [
         tag: ["图片", "格式", "转换", "图像", "编码"],
         intro: "这是一款ICO图标格式转换工具,可以转换图片格式为ico格式",
         networking: false, time: "2024-12-17"
+    }, {
+        title: "JSON&XML转换",
+        url: "jsontoxml",
+        logo: "",
+        tag: ["文本", "格式", "转换", "文档", "编码", "XML", "JSON"],
+        intro: "这是一款JSON&XML转换工具,可以将json格式转换为xml格式,也可以将xml格式转换为json格式",
+        networking: false, time: "2024-12-18"
+    }, {
+        title: "画板",
+        url: "drawingboard",
+        logo: "",
+        tag: ["画板", "画图", "绘图", "绘画", "图像", "图片", "绘制", "图形"],
+        intro: "这是一款画板工具,可以绘制各种形状,支持保存图片",
+        networking: false, time: "2024-12-18"
     }
 ]
 export default typelist

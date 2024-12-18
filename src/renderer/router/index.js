@@ -114,10 +114,18 @@ const routes = [
                         path: 'imageformatconversion',
                         component: () => import('@/views/tool/projects/ImageFormatConversion/index.vue'),
                         meta: { title: "toolbox.navs.imageformatconversion", tier: 3 },
-                    },{
+                    }, {
                         path: 'icoimageformatconversion',
                         component: () => import('@/views/tool/projects/ICOImageFormatConversion/index.vue'),
                         meta: { title: "toolbox.navs.icoimageformatconversion", tier: 3 },
+                    }, {
+                        path: 'jsontoxml',
+                        component: () => import('@/views/tool/projects/JsonToXml/index.vue'),
+                        meta: { title: "toolbox.navs.jsontoxml", tier: 3 },
+                    }, {
+                        path: 'drawingboard',
+                        component: () => import('@/views/tool/projects/DrawingBoard/index.vue'),
+                        meta: { title: "toolbox.navs.drawingboard", tier: 3 },
                     },
 
                 ]

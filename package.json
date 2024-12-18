@@ -34,6 +34,7 @@
     "jimp": "^1.6.0",
     "js-base64": "^3.7.7",
     "js-yaml": "^4.1.0",
+    "json5": "^2.2.3",
     "jszip": "^3.10.1",
     "mathjs": "^14.0.0",
     "pinyin-pro": "^3.26.0",
@@ -47,7 +48,9 @@
     "vue-json-viewer": "^3.0.4",
     "vue-router": "^4.5.0",
     "vuex": "^4.1.0",
-    "xlsx": "^0.18.5"
+    "x2js": "^3.4.4",
+    "xlsx": "^0.18.5",
+    "xml-formatter": "^3.6.3"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config": "^1.0.2",
