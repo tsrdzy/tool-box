@@ -1,68 +1,56 @@
 # Tool-Box
 
-## 项目介绍
-Tool-Box 是一款基于 Electron 和 Vue 开发的功能丰富的本地工具集应用程序。其核心目标在于为用户提供便捷、高效且无需网络连接即可使用的办公辅助工具，通过整合多种实用功能，深度满足用户在各类办公场景下的多样化需求，从而显著提升办公效率与用户体验。
+ **language: [English](README.md), [中文](README_zh.md)**
 
-## 功能特点
-1. **丰富的工具整合**：
-    - 全面覆盖文档处理、数据计算、格式转换等众多关键领域。例如，其快速文本编辑工具支持批量文本处理操作，无论是文本格式的调整，还是关键词的替换，都能轻松高效地完成；强大的数据计算模块可应对复杂的公式运算与数据分析任务，完美契合日常办公中的数据处理需求；格式转换功能更是表现卓越，能够在文档、图片、音频等多种格式之间实现快速且精准的转换，有效解决因格式不兼容而引发的工作困扰。
-2. **离线稳定运行**：
-    - 彻底摆脱网络束缚，在任何网络环境下均能稳定流畅地运行。这一特性确保用户在诸如出差途中、网络故障区域等无网场景下，依然能够毫无阻碍地开展工作，有效规避因网络问题导致的工作延误，同时有力地保障了用户数据的安全性与隐私性，让用户使用起来倍感安心。
-3. **简洁直观的界面设计**：
-    - 采用简洁明了且符合用户操作习惯的交互界面，对各个功能模块进行了精心布局。如此一来，无论是初次接触的新用户，还是经验丰富的熟练用户，都能够迅速上手并高效操作，极大地优化了用户体验并提升了工作效率。
+## Project Introduction
+Tool-Box is a feature-rich local toolset application developed based on Electron and Vue. Its core objective is to provide users with convenient, efficient office assistance tools that can be used without network connection. By integrating a variety of practical functions, it deeply meets the diverse needs of users in various office scenarios, thereby significantly enhancing office efficiency and user experience.
 
-### 目前已完成的工具(持续更新中...)
+## Feature Highlights
+- **Rich Tool Integration**:
+    - It comprehensively covers numerous key areas such as document processing, data calculation, and format conversion. For example, its fast text editing tool supports batch text processing operations. Whether it is adjusting text format or replacing keywords, it can be accomplished easily and efficiently. The powerful data calculation module can handle complex formula operations and data analysis tasks, perfectly meeting the data processing requirements in daily office work. The format conversion function performs outstandingly, enabling rapid and accurate conversion between various formats such as documents, images, and audio, effectively solving work troubles caused by format incompatibility.
+- **Offline Stable Operation**:
+    - It completely breaks free from network constraints and can run stably and smoothly in any network environment. This feature ensures that users can still carry out work without hindrance in offline scenarios such as during business trips or in areas with network failures. It effectively avoids work delays due to network problems and strongly guarantees the security and privacy of user data, making users feel at ease.
+- **Simple and Intuitive Interface Design**:
+    - It adopts a simple, clear, and user-friendly interaction interface with carefully arranged functional modules. As a result, both new users who are using it for the first time and experienced proficient users can quickly get started and operate efficiently, greatly optimizing user experience and improving work efficiency.
 
-|            |                |            |
-|---------------------|--------------------------|---------------------|
-| Base64 编码与文本转换 | 文本与网址转二维码      | JSON 转表格          |
-| 图片转 Base64 编码    | 图片压缩               | 音频变速（仅预览）    |
-| JSON 格式化          | 元素周期表             | 小学数学题生成      |
-| 进制转换            | 键盘测试工具           | 我的世界成就生成器  |
-| | | | |
+## Technology Stack
+- **Main Technology Stack**: Vue 3.4.30, Electron 31.0.2, vite 5.3.1, node.js 20.17.0
+- **Other Related Technologies**: There is a detailed list of dependent packages in the software's about interface.
 
+## Project Structure Explanation
+- The `src/renderer/vite/tool/projects` directory stores the source code of all tools. Each tool has its own independent folder, which contains an `index.vue` file. This file is the entry file of the tool. If the tool is relatively small, all the logic code is placed in the `index.vue` file. If the tool is more complex and large, its logic code can be split into the `index.vue` file and multiple sub-components in the `modules` folder.
+- The `main/ipc` directory stores the files for IPC communication between all tools and the main process. Each tool corresponds to a folder, which contains an `index.js` file. It is the entry for tool communication with the main process. Only when a tool needs to communicate with the main process, the corresponding file will be created. By default, a `js` file handles the communication of one function and interacts with the main process through the `ipc.js` file.
 
+## Installation and Operation
 
-## 技术栈
-- 主要技术栈：Vue 3.4.30，Electron 31.0.2，vite 5.3.1，node.js 20.17.0
-- 其他相关技术: 在软件关于界面中有详细的依赖包列表
+### Install Dependencies
+Execute the `npm install` command in the project root directory. This command will accurately install all the dependent packages required by the project according to the `package.json` and `package-lock.json` files, building a complete operating environment. During this process, it will automatically handle the compatibility issues of dependent package versions, complete the download and decompression of related files, and build a dependency tree, laying a solid foundation for the smooth startup of the project.
 
-## 项目结构说明
-- `src/renderer/vite/tool/projects` 目录存放了所有工具的项目源代码。每个工具独占一个文件夹，其中包含 `index.vue` 文件，此文件即为该工具的入口文件。若工具规模较小，则所有逻辑代码均置于 `index.vue` 文件内；若工具较为复杂庞大，其逻辑代码可拆分至 `index.vue` 文件以及 `modules` 文件夹中的多个子组件内。
-- `main/ipc` 目录存放了所有工具与主进程进行 IPC 通信的文件。每个工具对应一个文件夹，里面包含 `index.js` 文件，它是工具与主进程通信的入口。仅当工具需要与主进程通信时，才会创建相应文件。默认情况下，一个 `js` 文件处理一项功能的通信，并通过 `ipc.js` 文件与主进程交互。
+### Run in Development Mode
+Execute the `npm run dev` command to start the development server and enable the hot update function. During the development process, once the code is modified, the changes will be immediately displayed in the browser or Electron application window without the need to manually refresh the page to view the latest effects. This greatly shortens the development feedback cycle, accelerates the development process, helps developers quickly verify and iterate functional features, and effectively improves development efficiency.
 
-## 安装与运行
+### Build the Project
+#### Currently, only windows builds and adaptations are available
+#### Windows System
+Run the `npm run build:win` command to build executable files and installation packages suitable for the Windows system. This build process is based on the `electron-builder.yml` configuration file and will integrate application icons, copyright information, file associations, and other settings. Eventually, a standard `.exe` installation file and related resource files will be generated, facilitating distribution and deployment on the Windows platform and ensuring that the application runs stably in the Windows environment and complies with the system interaction specifications.
+#### macOS System
+Execute the `npm run build:mac` command to build an application package suitable for the macOS system. This build follows Apple's official specifications and the `electron-builder.yml` configuration, properly handling key aspects such as icons, signatures, and permission settings, generating a standard `.app` package structure. This ensures that the application has good compatibility, security, and user experience on the macOS system, supporting listing on the Mac App Store or internal deployment and distribution within an enterprise.
+#### Linux System
+Run the `npm run build:linux` command to build executable files and installation packages for various Linux distributions. The build process will adjust the configuration according to the characteristics of the target distribution (such as different package management systems and desktop environments), generating installation packages in formats such as `.deb` or `.rpm` and binary executable files, ensuring that the application can be smoothly installed and run stably on mainstream Linux platforms such as Ubuntu and CentOS, and adapting to the interaction specifications and system settings of different desktop environments (such as GNOME and KDE).
 
-### 安装依赖
-在项目根目录执行 `npm install` 指令。该指令会依据 `package.json` 与 `package-lock.json` 文件，精确地安装项目所需的全部依赖包，构建起完整的运行环境。在此过程中，它会自动处理依赖包版本的兼容性问题，完成相关文件的下载与解压，并构建依赖树，为项目的顺利启动奠定坚实基础。
+## Contribution Guide
+Welcome developers to contribute to Tool-Box! Whether you are committed to fixing bugs, optimizing performance, adding new features, or improving documentation, it will inject strong impetus into the continuous development of the project. Please follow the following process:
+1. **Fork the Project**: Click the Fork button of the project repository on the GitHub platform to create a personal copy of the project. In this way, you can carry out development and testing modifications in an independent environment without affecting the integrity and stability of the original project.
+2. **Create a Branch**: Create a feature branch from the master branch of the project and give it a clear and descriptive name, such as `feature/awesome-tool` or `bugfix/issue-123-fix`. Ensure that the branch has a single and clear function to facilitate code management and subsequent merge and backtracking operations.
+3. **Submit Code**: Complete the code writing and testing work within the created branch. Please be sure to follow the existing code style and specification requirements of the project. When submitting code, write clear, concise, and accurate commit messages, detailing the intention of the code modification and its impact on the function, so that team members can easily understand and review the code changes.
+4. **Initiate a Pull Request**: After the development work is completed, submit a Pull Request to the master branch of the original project on GitHub. When submitting, please describe the modification content, motivation, and testing situation in detail. The team will conduct a comprehensive review of the submitted code, including code quality, functional integrity, compatibility, and whether it complies with the overall planning and design principles of the project. Once approved, your code will be merged into the project, and your contribution will officially become part of the project.
 
-### 开发模式运行
-执行 `npm run dev` 命令可启动开发服务器，并开启热更新功能。在开发进程中，代码一旦修改，变动效果将即时呈现在浏览器或 Electron 应用窗口中，无需手动刷新页面即可查看最新效果。这极大地缩短了开发反馈周期，加速了开发流程，有助于开发者迅速验证和迭代功能特性，有效提升开发效率。
-
-### 构建项目
-#### Windows 系统
-运行 `npm run build:win` 命令，以构建适用于 Windows 系统的可执行文件与安装包。此构建过程依据 `electron-builder.yml` 配置文件进行，会集成应用图标、版权信息、文件关联等设置，最终生成标准的 `.exe` 安装文件以及相关资源文件，便于在 Windows 平台上进行分发部署，确保应用在 Windows 环境中稳定运行且符合系统交互规范。
-#### macOS 系统
-执行 `npm run build:mac` 命令来构建适用于 macOS 系统的应用程序包。该构建遵循苹果官方规范以及 `electron-builder.yml` 配置，会妥善处理图标、签名、权限设置等关键环节，生成标准的 `.app` 包结构，以此确保应用在 macOS 系统上具备良好的兼容性、安全性与用户体验，支持上架 Mac App Store 或在企业内部进行部署分发。
-#### Linux 系统
-运行 `npm run build:linux` 命令为 Linux 各发行版构建可执行文件与安装包。构建过程会依据目标发行版的特性（如不同的包管理系统、桌面环境）对配置进行调整，生成诸如 `.deb` 或 `.rpm` 格式的安装包以及二进制可执行文件，确保应用能够在 Ubuntu、CentOS 等主流 Linux 平台上顺利安装并稳定运行，同时适配不同桌面环境（如 GNOME、KDE）的交互规范与系统设置。
-
-## 贡献指南
-欢迎广大开发者踊跃为 Tool-Box 贡献力量！无论您是致力于修复漏洞、优化性能、添加新功能，还是完善文档，都将为项目的持续发展注入强大动力。请遵循以下流程：
-1. **Fork 项目**：在 GitHub 平台上点击项目仓库的 Fork 按钮，从而创建项目的个人副本。这样一来，您便能够在独立的环境中进行开发与测试修改，且不会对原项目的完整性与稳定性造成任何影响。
-2. **创建分支**：从项目的 master 分支创建一个功能分支，并为其赋予一个具有清晰描述性的名称，例如 `feature/awesome-tool` 或 `bugfix/issue-123-fix`。确保分支功能单一明确，以便于代码管理以及后续的合并回溯操作。
-3. **提交代码**：在创建的分支内完成代码的编写与测试工作。请务必遵循项目已有的代码风格与规范要求，在提交代码时，撰写清晰、简洁且准确的提交信息，详细阐述代码修改的意图以及对功能产生的影响，以便团队成员能够轻松理解并审查代码变更情况。
-4. **发起 Pull Request**：在开发工作完成后，于 GitHub 上向原项目的 master 分支提交 Pull Request。在提交时，请详细描述修改内容、动机以及测试情况。团队将对提交的代码进行全面审查，包括代码质量、功能完整性、兼容性以及是否符合项目整体规划与设计原则等方面。一旦审核通过，您的代码将被合并到项目中，您的贡献也将正式成为项目的一部分。
-
-### 工具编写简易流程
-1. 在 `src/renderer/vite/tool/projects` 目录中创建工具对应的文件夹。
-2. 在该工具文件夹内创建 `index.vue` 文件，作为工具的入口文件。
-3. 若有需要，在 `main/ipc` 目录中创建与工具同名的文件夹，并在其中创建 `index.js` 文件，用于与主进程进行通信。
-4. 工具编写完毕后，在 `src/renderer/vite/tool/index.vue` 文件中创建对该工具文件夹的引用，并依据工具类型将其添加至 `typelists` 中。
-5. 在 `src/router/index.ts` 文件中创建相应的路由。
-6. 若要实现多语言适配，将显示文字的地方修改为 `t('tool_name')`。需提前引入 `import { useI18n } from 'vue-i18n'`，并在 `setup` 函数中使用 `const { t } = useI18n()`。
-7. 关于主进程通信，如果通信内容较少，可直接在 api 文件中编写；若内容较多，则可单独创建一个文件，并在 api 中引入。
-8. 请尽量使用 `element-plus` 组件库。若需要使用 `element-ui`，则需在 `main/preload.js` 文件中引入，以确保界面风格的一致性。
-
-## 许可证
-Tool-Box 遵循 MIT 许可证进行开源发布。此许可证赋予使用者极大的自由度，允许其在商业与非商业项目中自由使用、修改并分发源代码。但使用者必须保留原始的版权声明与许可声明，以此确保开源精神得以延续，同时保护原作者的权益，推动项目在社区内的广泛传播与持续发展。
+### Simple Tool Writing Process
+1. Create a folder corresponding to the tool in the `src/renderer/vite/tool/projects` directory.
+2. Create an `index.vue` file in the tool folder as the entry file of the tool.
+3. If necessary, create a folder with the same name as the tool in the `main/ipc` directory and create an `index.js` file in it for communication with the main process.
+4. After the tool is written, create a reference to the tool folder in the `src/renderer/vite/tool/index.vue` file and add it to the `typelists` according to the tool type.
+5. Create a corresponding route in the `src/router/index.ts` file.
+6. To achieve multi-language adaptation, modify the display text to `t('tool_name')`. It is necessary to import `import { useI18n } from 'vue-i18n'` in advance and use `const { t } = useI18n()` in the `setup` function.
+7. For main process communication, if the communication content is less, it can be directly written in the api file; if the content is more, a separate file can be created and imported in the api.
+8. Please try to use the `element-plus` component library. If it is necessary to use `element-ui`, it needs to be imported in the `main/preload.js` file to ensure the consistency of the interface style.
